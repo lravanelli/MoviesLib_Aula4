@@ -12,6 +12,7 @@ class MoviesTableViewController: UITableViewController {
 
     //Criando nossa label que será a backgroundView da tabela
     var label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 22))
+    var movies:[String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +41,7 @@ class MoviesTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         //Caso nosso dataSource seja 0, teremos a label aparecendo.
-        //tableView.backgroundView = dataSource.count == 0 ? label : nil
+        tableView.backgroundView = movies.count == 0 ? label : nil
         //return dataSource.count //Retornamos o total de itens no nosso dataSource
         return 0
     }

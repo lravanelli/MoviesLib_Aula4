@@ -55,6 +55,7 @@ class MovieRegisterViewController: UIViewController {
         
         do {
             try context.save()
+            close(sender)
         } catch {
             print(error.localizedDescription)
         }

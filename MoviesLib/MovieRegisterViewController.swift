@@ -28,6 +28,7 @@ class MovieRegisterViewController: UIViewController {
             tvSummary.text = movie.summary
             tfDuration.text = movie.duration
             btAddUpdate.setTitle("Atualizar", for: .normal)
+            //jkbjkb
         }
 
         

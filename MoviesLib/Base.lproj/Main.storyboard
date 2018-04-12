@@ -31,7 +31,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="105.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LdD-ds-CyX">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LdD-ds-CyX">
                                             <rect key="frame" x="12" y="6" width="60" height="88"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="88" id="4ol-aS-y8w"/>
@@ -442,6 +442,9 @@
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addPoster:" destination="hbr-2B-Ggk" eventType="touchUpInside" id="6kE-jN-94o"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WAX-wc-DAp">
                                 <rect key="frame" x="256" y="20" width="48" height="30"/>
@@ -505,6 +508,11 @@
                                 <rect key="frame" x="0.0" y="64" width="320" height="505"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="ByB-oN-wGA">
+                                    <rect key="frame" x="0.0" y="72" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="axL-pc-X1e" style="IBUITableViewCellStyleDefault" id="sCu-3G-5Tc">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
@@ -524,6 +532,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="NI8-EL-7ye" id="QT3-vv-psi"/>
+                                    <outlet property="delegate" destination="NI8-EL-7ye" id="RmD-r3-yqw"/>
+                                </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tPz-5M-lY2">
                                 <rect key="frame" x="0.0" y="20" width="320" height="44"/>

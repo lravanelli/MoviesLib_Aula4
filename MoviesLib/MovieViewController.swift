@@ -33,10 +33,15 @@ class MovieViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         ivPoster.image = movie.poster
         lbTitle.text = movie.title
-        //lbGenre.text = movie.categoriesDescription
+        //lbGenre.text = movie?.categories.map({($0 as! Category).name!}).joined(separator: " | ")        
+        if let categories = movie?.categories {
+            lbGenre.text = categories.map({($0 as! Category).name!}).joined(separator: " | ")
+        }
+        
         lbDuration.text = movie.duration
         lbScore.text = "⭐️ \(movie.rating)/10"
         tvSinopsis.text = movie.summary
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
